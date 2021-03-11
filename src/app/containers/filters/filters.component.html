@@ -1,0 +1,32 @@
+<span class="filter-icon" (click)="toogleFilter()">
+  <app-icon-filter *ngIf="open" [outline]="false" size="25px"></app-icon-filter>
+  <app-icon-filter *ngIf="!open" ></app-icon-filter>
+</span>
+
+<div class="filter-wrapper" [ngClass]="{'active': open}">
+  <app-card style="padding:0">
+    <header class="filter-head">
+      FILTROS
+
+      <span class="icon-close">
+        <app-icon-cancel (click)="toogleFilter()"></app-icon-cancel>
+      </span>
+    </header>
+
+    <div class="filter-content">
+      <form [formGroup]="filterForm" (ngSubmit)="onSubmit()">
+
+        <label for="filtro1">Data de Início</label>
+        <input type="text" id="filtro1" placeholder="filtro1" formControlName="filtro1">
+
+        <label for="filtro2">Data de Início</label>
+        <input type="text" id="filtro2" placeholder="filtro2" formControlName="filtro2">
+
+        <button type="submit" class="btn" style="margin: 0;">
+          <app-icon-filter></app-icon-filter>
+          FILTRAR
+        </button>
+      </form>
+    </div>
+  </app-card>
+</div>

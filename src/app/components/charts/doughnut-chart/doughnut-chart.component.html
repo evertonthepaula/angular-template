@@ -1,0 +1,29 @@
+<div class="chart-container">
+  <canvas #chart width="400px"></canvas>
+
+  <svg viewBox="0 0 130 20" class="chart-total">
+    <text x="50%" y="40%" alignment-baseline="middle" text-anchor="middle">
+      {{ dataset?.total || 0}}
+    </text>
+  </svg>
+
+  <svg viewBox="0 0 300 55" class="chart-total-label">
+    <text x="50%" y="50" text-anchor="middle">{{ dataset?.label }}</text>
+  </svg>
+</div>
+
+<ng-container *ngIf="customlegends">
+  <div class="legends-container">
+    <div *ngFor="let item of dataset?.data;" class="legend">
+      <div class="dot" [style.background-color]="item.color"></div>
+
+      <div style="font-size: 15px;" class="legend-text">
+        <span *ngIf="options?.legendValue" class="legend-number">
+          {{ item.value }}
+        </span>
+
+        <span>{{ item.label }}</span>
+      </div>
+    </div>
+  </div>
+</ng-container>

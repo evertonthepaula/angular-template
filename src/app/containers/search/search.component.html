@@ -1,0 +1,8 @@
+<div class="search-box">
+  <span class="icon">
+    <app-icon-search></app-icon-search>
+  </span>
+
+  <input type="text" [placeholder]="placeholder" class="search-input"
+    (keyup)="search($event)" [title]="placeholder"/>
+</div>

@@ -1,0 +1,28 @@
+<span class="hamburguer" [ngClass]="{'his-open': open}" (click)="toogleMenu()"></span>
+
+<nav class="sidebar" [ngClass]="{'active': open}">
+  <header class="sidebar-head">
+    <span class="logo">
+      <img [src]="theme.logo" [alt]="theme.alt" width="100px">
+    </span>
+
+    <button routerLink="/login" class="btn btn-outline">logout <app-icon-logout></app-icon-logout></button>
+  </header>
+
+  <div class="sidebar-main">
+    <h3 class="sidebar-title">MENU</h3>
+
+    <ul class="sidebar-list">
+      <li routerLinkActive="active" routerLink="/dashboard">DASHBOARD</li>
+    </ul>
+
+    <hr class="separator">
+
+    <ul class="sidebar-list">
+      <li routerLink="/login">LOGOUT</li>
+    </ul>
+
+    <hr class="separator">
+
+  </div>
+</nav>

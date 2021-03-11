@@ -1,0 +1,5 @@
+// This statement loads the basic TG4 framework with several customizations
+@import "./assets/styles/sass/index.scss";
+
+// This statement loads all custom css made for the project. Here you will find styles that overwrite styles from framework.
+@import "./assets/styles/global/index.scss";

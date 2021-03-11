@@ -1,0 +1,15 @@
+<div class="modal-back" *ngIf="open">
+  <div #dialogContent class="modal-wrapper">
+    <header class="modal-head">
+      <app-icon-cancel (click)="close()"></app-icon-cancel>
+    </header>
+
+    <div class="modal-content">
+      <ng-content></ng-content>
+    </div>
+
+    <footer class="modal-footer">
+      <ng-content select="[slot='footer']"></ng-content>
+    </footer>
+  </div>
+</div>

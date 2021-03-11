@@ -1,0 +1,12 @@
+a {
+  color: $link-blue;
+  font-size: $link-font-size;
+  line-height: $link-height;
+  white-space: nowrap;
+  text-transform: uppercase;
+  text-overflow: ellipsis;
+
+  &:hover {
+    color: $link-blue-hover;
+  }
+}

@@ -1,0 +1,18 @@
+.search {
+  &-box {
+    width: 100%;
+    position: relative;
+
+    .icon {
+      display: inline-block;
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      z-index: 10;
+    }
+  }
+  &-input {
+    padding-left: 40px;
+    margin: 0;
+  }
+}

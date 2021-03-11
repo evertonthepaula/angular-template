@@ -1,0 +1,22 @@
+<div class="dots-wrapper" [ngClass]="{'his-open': open}" (click)="toogleActions()">
+  <span class="dots"></span>
+</div>
+
+<div class="actions" [ngClass]="{'active': open}">
+  <app-card>
+    <ul class="actions-list">
+      <li class="actions-item" routerLink="editar">
+        <app-icon-edit color="#222"></app-icon-edit>
+        <span class="text">action</span>
+      </li>
+      <li class="actions-item" routerLink="editar">
+        <app-icon-edit color="#222"></app-icon-edit>
+        <span class="text">action</span>
+      </li>
+      <li class="actions-item" routerLink="editar">
+        <app-icon-edit color="#222"></app-icon-edit>
+        <span class="text">action</span>
+      </li>
+    </ul>
+  </app-card>
+</div>

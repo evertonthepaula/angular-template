@@ -1,0 +1,29 @@
+<header class="header">
+  <div class="header-wrapper">
+    <div class="header-menu">
+    <app-hamburguer-menu></app-hamburguer-menu>
+  </div>
+
+    <h1 class="header-title">LOGO</h1>
+
+    <div class="header-user">
+      <span>
+        <app-icon-user size="44px"></app-icon-user>
+      </span>
+
+      <span>Nome do usuário</span>
+
+      <span class="header-user-arrow"></span>
+
+      <div class="header-user-actions">
+        <h3>Nome do usuário</h3>
+        <h4>Tipo do usuário</h4>
+
+        <span class="logout" title="Sair do sistema" (click)="logout()">
+          <app-icon-logout direction="left"></app-icon-logout>
+          SAIR
+        </span>
+      </div>
+    </div>
+  </div>
+</header>

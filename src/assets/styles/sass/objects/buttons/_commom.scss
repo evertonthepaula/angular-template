@@ -1,0 +1,91 @@
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+  min-height: $btn-height;
+  color: $smoke;
+  font-size: $btn-font-size;
+  font-family: $btn-family;
+  text-decoration: none;
+  background-color: $snow;
+  border-color: $dark-snow;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: $border-radius;
+  cursor: pointer;
+  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, opacity 0.15s ease-in-out;
+
+  @include padding(1);
+
+  @include margin(0, 0.5);
+
+  &:hover {
+    background-color: $dark-snow;
+  }
+
+  .fa {
+    margin-right: 8px;
+  }
+
+  &.white {
+    color: $smoke;
+    background-color: $white;
+    border: $btn-border-width solid $btn-border-color;
+
+    &:hover {
+      background-color: $dark-snow;
+    }
+
+    &:focus {
+      outline: solid 1px $smoke;
+    }
+  }
+
+  &.blue {
+    color: $white;
+    background-color: $blue;
+    border-color: $blue;
+
+    &:hover {
+      background-color: $blue-dark;
+      border-color: $blue-dark;
+    }
+
+    &:focus {
+      outline: solid 1px $blue-dark;
+    }
+  }
+
+  &.orange {
+    color: $white;
+    background-color: $orange;
+    border-color: $orange;
+
+    &:hover {
+      background-color: $orange-dark;
+      border-color: $orange-dark;
+    }
+
+    &:focus {
+      outline: solid 1px $orange-dark;
+    }
+  }
+
+  &.disabled,
+  &:disabled {
+    color: $smoke;
+    background-color: $snow;
+    border-color: $dark-snow;
+    cursor: not-allowed;
+    opacity: .4;
+
+    &:hover {
+      color: $smoke;
+      background-color: $snow;
+      border-color: $dark-snow;
+      cursor: not-allowed;
+      opacity: .4;
+    }
+  }
+}

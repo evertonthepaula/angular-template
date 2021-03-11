@@ -1,0 +1,71 @@
+.btn-icon {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  color: $brandColor;
+  font-size: $icon-small;
+  background: none;
+  border: 0;
+  border-radius: $border-radius;
+  cursor: pointer;
+  transition: background-color 0.15s ease-in-out;
+
+  @include padding(1);
+
+  @include margin(1);
+
+  &:hover {
+    color: $white;
+    background-color: $brandColor;
+  }
+
+  &:focus {
+    outline: 1px auto $blue-dark;
+  }
+
+  &.blue {
+    color: $blue;
+
+    &:hover {
+      color: $white;
+      background-color: $blue;
+    }
+  }
+
+  &.orange {
+    color: $orange;
+
+    &:hover {
+      color: $white;
+      background-color: $orange;
+    }
+  }
+
+  &.smoke,
+  &.disabled,
+  &:disabled {
+    color: $dark-snow;
+    background-color: $snow;
+
+    &:hover {
+      color: $dark-snow;
+      background-color: $snow;
+    }
+  }
+  &.disabled,
+  &:disabled {
+    cursor: not-allowed;
+  }
+
+  &.is-medium {
+    font-size: 2.4rem;
+  }
+
+  &.is-large {
+    font-size: 3.2rem;
+  }
+
+  &.is-extraLarge {
+    font-size: 4.8rem;
+  }
+}

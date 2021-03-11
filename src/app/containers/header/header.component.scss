@@ -1,0 +1,94 @@
+.header {
+  display: block;
+  width: 100%;
+  background-color: #8c61d3;
+
+  &-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 70px;
+    min-height: 66px;
+  }
+  &-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 66px;
+    border-right: 1px solid #F0F;
+  }
+  &-title {
+    flex: 1 1 auto;
+    padding-left: 30px;
+    margin: 0;
+    font-size: 28px;
+    line-height: 38px;
+    color: #333;
+  }
+  &-user {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 250px;
+    height: 66px;
+    position: relative;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    border: 1px solid #F0F;
+    border-top: none;
+    border-bottom: none;
+    cursor: pointer;
+
+    &-arrow {
+      border: 6px solid transparent;
+      border-top-color: #F0F;
+      margin-top: 8px;
+    }
+    &-actions {
+      display: none;
+      width: 100%;
+      position: absolute;
+      top: 100%;
+      background: #ffffff;
+      box-shadow: 0px 3px 6px #00000029;
+      h3 {
+        font-size: 14px;
+        color: #222222;
+        font-weight: 600;
+        margin: 20px 0 0px 0;
+        padding: 0 20px;
+      }
+      h4 {
+        font-size: 12px;
+        color: #222222;
+        margin: 5px 0 20px 0;
+        padding: 0 20px;
+      }
+      .logout {
+        display: flex;
+        align-items: center;
+        height: 44px;
+        padding: 0 20px;
+        font-size: 14px;
+        font-weight: bold;
+        color: #F0F;
+        text-decoration: none;
+        border-top: 1px solid #efefef;
+
+        &:hover{
+          background: rgb(206 206 206 / 20%);
+        }
+        app-icon-logout{
+          margin-right: 10px;
+        }
+      }
+    }
+    &:hover{
+      .header-user-actions {
+        display: block;
+      }
+    }
+  }
+}

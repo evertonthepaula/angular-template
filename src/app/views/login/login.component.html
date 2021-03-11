@@ -1,0 +1,11 @@
+<section class="login-page">
+  <app-card>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <app-input-email [formGroup]="loginForm" name="usermail" label="E-mail"></app-input-email>
+
+      <app-input-password [formGroup]="loginForm" name="password" label="Senha"></app-input-password>
+
+      <button type="submit" class="btn blue" [disabled]="!loginForm.valid">Login</button>
+    </form>
+  </app-card>
+</section>

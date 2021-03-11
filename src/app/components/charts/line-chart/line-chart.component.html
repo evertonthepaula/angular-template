@@ -1,0 +1,21 @@
+<div class="chart-container">
+  <div class="chart-wrapper">
+    <canvas class="chart-canvas" #chart></canvas>
+  </div>
+
+  <ng-container *ngIf="customlegends">
+    <ul class="chart-legends">
+      <li *ngFor="let item of dataset?.data;">
+        <span class="dot" [style.background-color]="item.color"></span>
+
+        <span *ngIf="options?.legendValue" class="chart-legends-value">
+          {{ item.value }}
+        </span>
+
+        <span class="chart-legends-label">
+          {{ item.label }}
+        </span>
+      </li>
+    </ul>
+  </ng-container>
+</div>
