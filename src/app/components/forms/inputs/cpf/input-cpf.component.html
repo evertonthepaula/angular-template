@@ -1,17 +1,17 @@
-<div [ngClass]="{'show-errors': status?.status=== 'INVALID' && status.touched}">
-  <label *ngIf="label" [for]="this.name">{{this.label}}</label>
+<div [ngClass]="{'form-errors': status.invalid && (status.dirty || status.touched)}">
+  <label *ngIf="label" [for]="this.name">
+    {{this.label}}
+  </label>
+
   <input type="text" autocomplete="on" [id]="this.name" [placeholder]="this.placeholder" (keyup)="onKeyup($event)" />
 
-  <div *ngIf="status?.pristine">
-    <small *ngIf="status?.errors?.cpfInvalido">
-      <ng-container *ngIf="status?.errors?.required">
-        CPF é obrigatório!
-      </ng-container>
+  <span *ngIf="status.invalid && (status.dirty || status.touched)" class="form-errors-info">
+    <ng-container *ngIf="status?.errors?.required">
+      CPF é obrigatório!
+    </ng-container>
 
-      <ng-container *ngIf="status?.errors?.cpfInvalido">
-        Digite um CPF válido.
-      </ng-container>
-    </small>
-  </div>
-
+    <ng-container *ngIf="status?.errors?.cpfInvalido">
+      Digite um CPF válido.
+    </ng-container>
+  </span>
 </div>

@@ -1,0 +1,14 @@
+<span *ngIf="show || status.invalid && (status.dirty || status.touched)" class="form-errors-info">
+  <ng-container *ngIf="status?.errors?.required">
+    - Campo {{ FieldName }} obrigatório!
+  </ng-container>
+  <ng-container *ngIf="status?.errors?.email">
+    - Digite um e-mail válido.
+  </ng-container>
+  <ng-container *ngIf="status?.errors?.minlength">
+    - Campo {{ FieldName }} deve ter um mínimo de caracteres.
+  </ng-container>
+  <ng-container *ngIf="status?.errors?.maxlength">
+    - Campo {{ FieldName }} tem um limite máximo de caracteres.
+  </ng-container>
+</span>

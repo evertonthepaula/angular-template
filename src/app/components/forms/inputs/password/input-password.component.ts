@@ -1,5 +1,5 @@
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Component, Input } from '@angular/core';
+import { Component, Input, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-input-password',
@@ -20,8 +20,13 @@ export class InputPasswordComponent {
     this.formGroup.addControl(this.name, this.formBuilder.control(null, [Validators.required]));
   }
 
+  ngOnChanges(changes: SimpleChanges): void {
+    this.status = this.formGroup.controls[this.name];
+  }
+
   onKeyup({ target: { value } }) {
     this.formGroup.controls[this.name].setValue(value);
+    this.formGroup.controls[this.name].markAsTouched();
     this.status = this.formGroup.controls[this.name];
   }
 }

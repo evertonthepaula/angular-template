@@ -1,5 +1,5 @@
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Component, Input } from '@angular/core';
+import { Component, Input, SimpleChanges } from '@angular/core';
 
 // CUSTOM VALIDATOR
 import { CpfValidator } from 'src/app/Validators';
@@ -23,8 +23,13 @@ export class InputCpfComponent {
     this.formGroup.addControl(this.name, this.formBuilder.control(null, [Validators.required, CpfValidator.ValidaCpf]));
   }
 
+  ngOnChanges(changes: SimpleChanges): void {
+    this.status = this.formGroup.controls[this.name];
+  }
+
   onKeyup({ target: { value } }) {
     this.formGroup.controls[this.name].setValue(value);
+    this.formGroup.controls[this.name].markAsTouched();
     this.status = this.formGroup.controls[this.name];
   }
 }

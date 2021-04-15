@@ -1,0 +1,14 @@
+.form-errors {
+  input,
+  select,
+  .field {
+    border-color: #aa0000;
+    background-color: #ffa39a;
+  }
+  &-info {
+    padding: 0px 10px;
+    font-size: 14px;
+    color: #aa0000;
+    line-height: 0;
+  }
+}

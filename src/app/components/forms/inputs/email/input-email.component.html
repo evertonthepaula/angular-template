@@ -1,15 +1,17 @@
-<div [ngClass]="{'show-errors': status?.status=== 'INVALID'}">
-  <label *ngIf="label" [for]="this.name">{{this.label}}</label>
+<div [ngClass]="{'form-errors': status.invalid && (status.dirty || status.touched)}">
+  <label *ngIf="label" [for]="this.name">
+    {{this.label}}
+  </label>
+
   <input type="email" autocomplete="on" [id]="this.name" [placeholder]="this.placeholder" (keyup)="onKeyup($event)" />
 
-  <div *ngIf="status?.pristine">
-    <small *ngIf="status?.errors?.email">
+  <span *ngIf="status.invalid && (status.dirty || status.touched)" class="form-errors-info">
+    <ng-container *ngIf="status?.errors?.email">
       Digite um e-mail válido.
-    </small>
+    </ng-container>
 
-    <small *ngIf="status?.errors?.required">
-      E-mail é obrigatório!
-    </small>
-  </div>
-
+    <ng-container *ngIf="status?.errors?.required">
+      e-mail é obrigatório!
+    </ng-container>
+  </span>
 </div>
